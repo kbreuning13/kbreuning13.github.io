@@ -777,7 +777,184 @@
 }
 
 
-        </style>
+        
+
+/* Mobile-Layout fuer Seite 2 und 3 */
+@media screen and (max-width: 700px) {
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    header {
+        height: 60px;
+    }
+
+    .menu-button {
+        font-size: 42px;
+        margin-right: 16px;
+    }
+
+    nav {
+        width: min(280px, 85vw);
+        box-sizing: border-box;
+    }
+
+    /* Seite 2: Bedienelemente und Karte untereinander */
+    .section2 {
+        height: auto;
+        min-height: 100vh;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+        padding: 85px 16px 30px;
+    }
+
+    .section2 .dropdown,
+    .section2 .flyer-code-box,
+    .section2 .category-box,
+    .section2 .big-box {
+        position: relative;
+        inset: auto;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .section2 .dropdown {
+        order: 1;
+    }
+
+    .section2 .dropdown-button {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16pt;
+    }
+
+    .section2 .flyer-code-box {
+        order: 2;
+        min-height: 55px;
+        height: auto;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .section2 .flyer-label {
+        font-size: 11pt;
+    }
+
+    #flyer-code-input {
+        min-width: 0;
+        width: 82px;
+        flex: 0 0 82px;
+        box-sizing: border-box;
+    }
+
+    .section2 .category-box {
+        order: 3;
+        height: auto;
+        max-height: 55vh;
+        min-height: 250px;
+        padding: 18px;
+        overflow: hidden;
+    }
+
+    .section2 .category-box h3 {
+        font-size: 28pt;
+        margin-bottom: 12px;
+    }
+
+    .section2 .category-scroll {
+        min-height: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .section2 .category,
+    .section2 .category-header {
+        font-size: 15pt;
+    }
+
+    .section2 .subcategory {
+        font-size: 15pt;
+        padding-left: 30px;
+    }
+
+    .section2 .big-box {
+        order: 4;
+        height: 58vh;
+        min-height: 360px;
+        max-height: 600px;
+        padding: 8px;
+        overflow: hidden;
+    }
+
+    .section2 .map-container,
+    .section2 #map {
+        width: 100%;
+        height: 100%;
+        min-height: 340px;
+    }
+
+    /* Seite 3: Impressum als eine Spalte */
+    .section3 {
+        height: auto;
+        min-height: 100vh;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 85px 20px 35px;
+        align-items: flex-start;
+    }
+
+    .impressum-container {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .impressum-header {
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .impressum-title {
+        font-size: clamp(38px, 10vw, 52px);
+        margin: 0;
+    }
+
+    .hm-logo {
+        width: clamp(75px, 22vw, 120px);
+        height: auto;
+    }
+
+    .impressum-columns {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .column,
+    .column:first-child {
+        border-left: 2px solid #f6eee1;
+        padding: 0 0 0 14px;
+        font-size: 14pt;
+        overflow-wrap: anywhere;
+    }
+
+    .footer-note {
+        margin-top: 28px;
+        font-size: 10pt;
+        overflow-wrap: anywhere;
+    }
+}
+
+</style>
 </head>
 <body>
     <div class="section1">
