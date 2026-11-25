@@ -800,18 +800,18 @@
         box-sizing: border-box;
     }
 
-    /* Seite 2: Bedienelemente und Karte untereinander */
+    /* Seite 2: kompakte mobile Anordnung */
     .section2 {
         height: auto;
         min-height: 100vh;
         width: 100%;
         box-sizing: border-box;
         position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 18px;
-        padding: 85px 16px 30px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+        gap: 12px;
+        padding: 75px 12px 20px;
     }
 
     .section2 .dropdown,
@@ -823,12 +823,14 @@
         transform: none;
         width: 100%;
         max-width: 100%;
+        min-width: 0;
         box-sizing: border-box;
         margin: 0;
     }
 
     .section2 .dropdown {
-        order: 1;
+        grid-column: 1;
+        grid-row: 1;
     }
 
     .section2 .dropdown-button {
@@ -838,15 +840,17 @@
     }
 
     .section2 .flyer-code-box {
-        order: 2;
+        grid-column: 2;
+        grid-row: 1;
         min-height: 55px;
-        height: auto;
-        gap: 8px;
-        padding: 10px;
+        height: 100%;
+        gap: 6px;
+        padding: 8px;
     }
 
     .section2 .flyer-label {
-        font-size: 11pt;
+        font-size: 10pt;
+        line-height: 1.1;
     }
 
     #flyer-code-input {
@@ -857,17 +861,18 @@
     }
 
     .section2 .category-box {
-        order: 3;
-        height: auto;
-        max-height: 55vh;
-        min-height: 250px;
-        padding: 18px;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        height: 28vh;
+        max-height: 220px;
+        min-height: 155px;
+        padding: 12px 16px;
         overflow: hidden;
     }
 
     .section2 .category-box h3 {
-        font-size: 28pt;
-        margin-bottom: 12px;
+        font-size: 22pt;
+        margin-bottom: 6px;
     }
 
     .section2 .category-scroll {
@@ -887,11 +892,12 @@
     }
 
     .section2 .big-box {
-        order: 4;
-        height: 58vh;
-        min-height: 360px;
-        max-height: 600px;
-        padding: 8px;
+        grid-column: 1 / -1;
+        grid-row: 3;
+        height: 42vh;
+        min-height: 270px;
+        max-height: 430px;
+        padding: 6px;
         overflow: hidden;
     }
 
@@ -899,7 +905,7 @@
     .section2 #map {
         width: 100%;
         height: 100%;
-        min-height: 340px;
+        min-height: 260px;
     }
 
     /* Seite 3: Impressum als eine Spalte */
