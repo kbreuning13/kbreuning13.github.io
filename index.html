@@ -776,16 +776,17 @@
     }
 }
 
-/* Safari-Korrektur für schmale Ansichten oberhalb des bestehenden Handy-Breakpoints:
-   nur die Ebenenreihenfolge sichern, keine Größen oder Positionen verändern. */
-@media screen and (max-width: 700px) {
-    .section1 .textblock,
+
+        
+
+/* Safari-/Tablet-Korrektur: Info-Kasten vor dem Bild halten,
+   ohne Größen, Abstände oder Positionen des Layouts zu verändern.
+   Die bestehende Handy-Darstellung bis 600px bleibt unberührt. */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
     .section1 .info-box {
         z-index: 3;
     }
 }
-
-        
 
 /* Mobile-Layout fuer Seite 2 und 3 */
 @media screen and (max-width: 700px) {
