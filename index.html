@@ -80,7 +80,6 @@
             font-size: 16pt;
 
             border-radius: 15px;
-            z-index: 2; /* Info-Kasten vor dem Bild anzeigen */
 
            
         }
@@ -778,78 +777,7 @@
 }
 
 
-/* Erste Seite: Zwischen Tablet- und Desktopbreite bleiben Bild und Text nebeneinander.
-   Der Textkasten darf das Bild leicht überlagern; das Handy-Layout bis 600px bleibt unverändert. */
-@media screen and (min-width: 601px) and (max-width: 1320px) {
-    .section1 {
-        height: 100vh;
-        min-height: 620px;
-        position: relative;
-        padding-top: 20px;
-        box-sizing: border-box;
-    }
-
-    .section1 .side-image {
-        position: absolute;
-        left: 3%;
-        top: 46%;
-        transform: translateY(-50%);
-        width: 54%;
-        max-width: 650px;
-        height: auto;
-        z-index: 1;
-    }
-
-    .section1 .textblock {
-        position: absolute;
-        left: 53%;
-        right: 3%;
-        top: 17%;
-        transform: none;
-        width: auto;
-        text-align: left;
-        z-index: 2;
-    }
-
-    .section1 .textblock h1 {
-        font-size: clamp(38px, 5.2vw, 72px);
-        line-height: 1.02;
-        margin: 0;
-    }
-
-    .section1 .textblock h2 {
-        font-size: clamp(25px, 3.3vw, 46px);
-        line-height: 1.08;
-        margin: 8px 0 0;
-    }
-
-    .section1 .info-box {
-        position: absolute;
-        left: 51%;
-        right: 3%;
-        top: 49%;
-        transform: none;
-        width: auto;
-        max-width: none;
-        height: auto;
-        box-sizing: border-box;
-        margin: 0;
-        z-index: 3;
-        font-size: clamp(14px, 1.35vw, 18px);
-        padding: clamp(14px, 1.6vw, 20px);
-    }
-
-    .section1 .scroll-button {
-        position: absolute;
-        left: 50%;
-        bottom: 18px;
-        transform: translateX(-50%);
-        width: 100px;
-        max-width: 20%;
-        height: auto;
-        z-index: 5;
-    }
-}
+        
 
 /* Mobile-Layout fuer Seite 2 und 3 */
 @media screen and (max-width: 700px) {
