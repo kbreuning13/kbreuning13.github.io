@@ -80,6 +80,7 @@
             font-size: 16pt;
 
             border-radius: 15px;
+            z-index: 2; /* Info-Kasten vor dem Bild anzeigen */
 
            
         }
@@ -777,14 +778,81 @@
 }
 
 
-        
+/* Erste Seite: Bild und Text bei schmaleren Fenstern untereinander anordnen.
+   Das bestehende Handy-Layout bis 600px bleibt unverändert. */
+@media screen and (min-width: 601px) and (max-width: 1320px) {
+    .section1 {
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 85px 24px 35px;
+        box-sizing: border-box;
+        gap: 18px;
+    }
 
-/* Safari-/Tablet-Korrektur: Info-Kasten vor dem Bild halten,
-   ohne Größen, Abstände oder Positionen des Layouts zu verändern.
-   Die bestehende Handy-Darstellung bis 600px bleibt unberührt. */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .section1 .textblock {
+        position: relative;
+        order: 0;
+        left: auto;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .section1 .textblock h1 {
+        font-size: clamp(42px, 7vw, 76px);
+        line-height: 1.05;
+        margin: 0;
+    }
+
+    .section1 .textblock h2 {
+        font-size: clamp(28px, 4.5vw, 48px);
+        line-height: 1.15;
+        margin: 8px 0 0;
+    }
+
+    .section1 .side-image {
+        position: relative;
+        order: 1;
+        display: block;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 650px;
+        height: auto;
+        box-sizing: border-box;
+    }
+
     .section1 .info-box {
-        z-index: 3;
+        position: relative;
+        order: 2;
+        left: auto;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 590px;
+        height: auto;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .section1 .scroll-button {
+        position: relative;
+        order: 3;
+        display: block;
+        left: auto;
+        bottom: auto;
+        transform: none;
+        width: 110px;
+        max-width: 25%;
+        height: auto;
+        margin: 4px auto 0;
     }
 }
 
